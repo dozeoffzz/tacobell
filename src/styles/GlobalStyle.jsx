@@ -8,7 +8,6 @@ const globalStyles = css`
   html,
   body {
     /* height: 100%; */
-    background-color: #0c0c0c;
   }
 
   body,
@@ -74,6 +73,7 @@ const globalStyles = css`
   }
 
   body {
+    background: linear-gradient(to bottom, #fafafa 0%, #cccccc 42%, #fafafa 100%);
     line-height: 1.5;
     transition:
       background-color 0.3s,
