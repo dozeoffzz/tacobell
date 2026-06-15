@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React from "react";
+import React, { useState } from "react";
 import { AllMenu } from "../apis/menu";
 import { NavLink } from "react-router-dom";
 
@@ -33,29 +33,45 @@ const CategoryBtn = styled.button`
   background-color: #ad95d7;
   min-width: 150px;
   font-size: 20px;
+
+  background-color: ${({ active }) => (active ? "#fafafa" : "#ad95d7")};
+
+  transition: 0.3s;
 `;
 
 const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+`;
+const MenuViewport = styled.div`
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: #ad95d7;
 `;
 
 const MenuTrack = styled.div`
   padding: 50px 0;
   display: flex;
-  justify-content: center;
   gap: 20px;
-  background-color: #ad95d7;
-  border-radius: 30px;
   overflow: hidden;
-  width: 1920px;
+  transition: transform 0.5s ease;
+  transform: ${({ currentIndex }) => `translateX(-${currentIndex * 455}px)`};
 `;
 
 const MenuCard = styled.div`
   padding: 20px;
   border: 1px solid #fafafa;
   border-radius: 30px;
+  width: 455px;
+  flex-shrink: 0;
+
+  background-color: ${({ active }) => (active ? "#fafafa" : "transparent")};
+
+  transition: 0.3s;
 `;
 
 const MenuImgContainer = styled.div`
@@ -70,6 +86,8 @@ const MenuImgContainer = styled.div`
   background-color: #fafafa20;
   box-shadow: 4px 4px 4px #0c0c0c25;
   border-radius: 30px;
+  background-color: ${({ active }) => (active ? "#ad95d7" : "#fafafa20")};
+  transition: 0.3s;
 `;
 
 const MenuAllInfo = styled.div`
@@ -87,10 +105,12 @@ const MenuNamePrice = styled.div`
 const MenuNameText = styled.h3`
   font-size: 28px;
   color: #9b00ff;
+  font-family: "Jua";
 `;
 const MenuPriceText = styled.p`
   font-size: 28px;
   color: #9b00ff;
+  font-family: "Jua";
 `;
 
 const MenuInfoText = styled.p`
@@ -103,38 +123,68 @@ const MenuMoreView = styled(NavLink)`
   width: 500px;
   border-radius: 0 0 50px 50px;
   font-size: 20px;
+
+  &:hover {
+    background-color: #fafafa;
+    color: #0c0c0c;
+    box-shadow: 0 10px 10px -5px #9b00ff;
+  }
+  &:active {
+    background-color: #fafafa;
+    color: #0c0c0c;
+    box-shadow: 0 0 16px #9b00ff;
+  }
+
+  transition: all 0.3s ease;
 `;
 
 export default function MenuPage() {
+  const [selectedCategory, setSelectedCategory] = useState("전체");
+  const categories = ["전체", "타코", "보울", "브리또", "크런치랩,퀘사디아"];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const filteredMenu =
+    selectedCategory === "전체" ? AllMenu : AllMenu.filter((item) => item.category === selectedCategory);
+
+  const CENTER_OFFSET = 1;
   return (
     <Section>
       <TacoBellMenu>TACO BELL's MENU</TacoBellMenu>
       <CategoryContainer>
-        <CategoryBtn>전체</CategoryBtn>
-        <CategoryBtn>타코</CategoryBtn>
-        <CategoryBtn>보울</CategoryBtn>
-        <CategoryBtn>브리또</CategoryBtn>
-        <CategoryBtn>크런치랩,퀘사디아</CategoryBtn>
+        {categories.map((category) => (
+          <CategoryBtn
+            key={category}
+            active={selectedCategory === category}
+            onClick={() => {
+              setSelectedCategory(category);
+              setCurrentIndex(0);
+            }}
+          >
+            {category}
+          </CategoryBtn>
+        ))}
       </CategoryContainer>
       <MenuContainer>
-        <MenuTrack>
-          {AllMenu.map((item) => (
-            <NavLink>
-              <MenuCard key={item.id}>
-                <MenuImgContainer>
-                  <img src={item.img} />
-                </MenuImgContainer>
-                <MenuAllInfo>
-                  <MenuNamePrice>
-                    <MenuNameText>{item.name}</MenuNameText>
-                    <MenuPriceText>{item.price}</MenuPriceText>
-                  </MenuNamePrice>
-                  <MenuInfoText>{item.info}</MenuInfoText>
-                </MenuAllInfo>
-              </MenuCard>
-            </NavLink>
-          ))}
-        </MenuTrack>
+        <MenuViewport>
+          <MenuTrack currentIndex={currentIndex}>
+            {filteredMenu.map((item, index) => (
+              <NavLink>
+                <MenuCard key={item.id} active={index === currentIndex + CENTER_OFFSET}>
+                  <MenuImgContainer active={index === currentIndex + CENTER_OFFSET}>
+                    <img src={item.img} />
+                  </MenuImgContainer>
+                  <MenuAllInfo>
+                    <MenuNamePrice>
+                      <MenuNameText>{item.name}</MenuNameText>
+                      <MenuPriceText>{item.price}</MenuPriceText>
+                    </MenuNamePrice>
+                    <MenuInfoText>{item.info}</MenuInfoText>
+                  </MenuAllInfo>
+                </MenuCard>
+              </NavLink>
+            ))}
+          </MenuTrack>
+        </MenuViewport>
         <MenuMoreView>메뉴 자세히 보기</MenuMoreView>
       </MenuContainer>
     </Section>

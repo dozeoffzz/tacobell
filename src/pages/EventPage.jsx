@@ -57,12 +57,14 @@ const EventInfo = styled.p`
 
 const EventImgContainer = styled.div`
   display: flex;
+  width: 1200px;
+  overflow: hidden;
 `;
 const EventImgTrack = styled.div`
   display: flex;
   gap: 20px;
   transition: transform 0.5s ease;
-  transform: ${({ currentIndex }) => `translateX(-${currentIndex * 480}px)`};
+  transform: ${({ currentIndex }) => `translateX(-${currentIndex * 500}px)`};
 `;
 const EventImg = styled.div`
   flex-shrink: 0;
@@ -71,26 +73,59 @@ const EventImg = styled.div`
   transition: 0.4s;
 
   transform: ${({ active }) => (active ? "scale(1)" : "scale(0.9)")};
+  img {
+    width: 480px;
+    display: block;
+  }
 `;
 
 const BtnWrap = styled.div`
   display: flex;
-  gap: 40px;
+  gap: 60px;
+`;
+
+const LeftRightWrap = styled.div`
+  display: flex;
+  gap: 20px;
 `;
 const LeftBtn = styled.button`
   width: 50px;
   height: 50px;
   background-color: #fafafa;
   border-radius: 50%;
+
+  &:hover {
+    background-color: #ad95d7;
+    color: #0c0c0c;
+    box-shadow: 0 0 8px #9b00ff;
+  }
+  &:active {
+    background-color: #ad95d7;
+    color: #0c0c0c;
+    box-shadow: 0 0 16px #9b00ff;
+  }
+
+  transition: all 0.3s ease;
 `;
 const RightBtn = styled(LeftBtn)``;
 
 export default function EventPage() {
-  const [currentEvent, setCurrentEvent] = useState(AllEvent[0]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const handleSelect = (index) => {
-    setCurrentIndex(index);
-    setCurrentEvent(AllEvent[index]);
+
+  const currentEvent = AllEvent[currentIndex];
+
+  const handleNext = () => {
+    if (currentIndex < AllEvent.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+      setCurrentEvent(AllEvent[currentIndex + 1]);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+      setCurrentEvent(AllEvent[currentIndex - 1]);
+    }
   };
   return (
     <Section>
@@ -104,8 +139,10 @@ export default function EventPage() {
             <EventInfo>{currentEvent.info}</EventInfo>
           </EventInfoWrap>
           <BtnWrap>
-            <LeftBtn>left</LeftBtn>
-            <RightBtn>right</RightBtn>
+            <LeftRightWrap>
+              <LeftBtn onClick={handlePrev}>left</LeftBtn>
+              <RightBtn onClick={handleNext}>right</RightBtn>
+            </LeftRightWrap>
             <ButtonWrap>
               <Buttons />
             </ButtonWrap>
@@ -114,7 +151,7 @@ export default function EventPage() {
         <EventImgContainer>
           <EventImgTrack currentIndex={currentIndex}>
             {AllEvent.map((item, index) => (
-              <EventImg key={item.id} onClick={() => handleSelect(index)}>
+              <EventImg key={item.id} active={index === currentIndex}>
                 <img src={item.img} alt={item.name} />
               </EventImg>
             ))}

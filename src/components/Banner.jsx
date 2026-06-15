@@ -7,6 +7,13 @@ const BannerContainer = styled.div`
   height: 900px;
 `;
 
+const BannerImg = styled.img`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+`;
+
 const Indicator = styled.div`
   padding: 0 5px;
   position: absolute;
@@ -14,18 +21,15 @@ const Indicator = styled.div`
   right: 100px;
   bottom: 45px;
   display: flex;
-
-  width: 1720px;
   height: 5px;
   border-radius: 15px;
   background-color: #d9d9d9;
+  z-index: 10;
 `;
 
 const CurrentIndicator = styled.div`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   display: flex;
+  align-self: center;
   width: 500px;
   height: 10px;
   border-radius: 15px;
@@ -35,9 +39,9 @@ const CurrentIndicator = styled.div`
 export default function Banner() {
   return (
     <BannerContainer>
-      <img src={bannerImg} />
+      <BannerImg src={bannerImg} />
       <Indicator>
-        <CurrentIndicator></CurrentIndicator>
+        <CurrentIndicator />
       </Indicator>
     </BannerContainer>
   );

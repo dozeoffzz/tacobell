@@ -36,6 +36,7 @@ const Text = styled.p`
     margin: 0 20px;
     color: #ff8900;
   }
+  font-family: "Shrikhand";
 `;
 export default function DesignText() {
   return (
