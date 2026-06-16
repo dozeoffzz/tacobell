@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import right from "../assets/icons/right.svg";
 
 const MoreInfo = styled(NavLink)`
   padding: 12px 32px;
@@ -8,6 +9,10 @@ const MoreInfo = styled(NavLink)`
   border-radius: 30px;
   width: 150px;
   font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 
   &:hover {
     background-color: #ad95d7;
@@ -24,5 +29,10 @@ const MoreInfo = styled(NavLink)`
 `;
 
 export default function Buttons() {
-  return <MoreInfo>더보기</MoreInfo>;
+  return (
+    <MoreInfo>
+      더보기
+      <img src={right} />
+    </MoreInfo>
+  );
 }

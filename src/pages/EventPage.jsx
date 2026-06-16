@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 import React, { useState } from "react";
 import Buttons from "../components/Buttons";
 import { AllEvent } from "../apis/event";
+import left from "../assets/icons/left.svg";
+import right from "../assets/icons/right.svg";
 
 const Section = styled.section`
   padding: 50px 100px;
@@ -93,6 +95,9 @@ const LeftBtn = styled.button`
   height: 50px;
   background-color: #fafafa;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background-color: #ad95d7;
@@ -117,14 +122,12 @@ export default function EventPage() {
   const handleNext = () => {
     if (currentIndex < AllEvent.length - 1) {
       setCurrentIndex(currentIndex + 1);
-      setCurrentEvent(AllEvent[currentIndex + 1]);
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
-      setCurrentEvent(AllEvent[currentIndex - 1]);
     }
   };
   return (
@@ -140,8 +143,12 @@ export default function EventPage() {
           </EventInfoWrap>
           <BtnWrap>
             <LeftRightWrap>
-              <LeftBtn onClick={handlePrev}>left</LeftBtn>
-              <RightBtn onClick={handleNext}>right</RightBtn>
+              <LeftBtn onClick={handlePrev}>
+                <img src={left} />
+              </LeftBtn>
+              <RightBtn onClick={handleNext}>
+                <img src={right} />
+              </RightBtn>
             </LeftRightWrap>
             <ButtonWrap>
               <Buttons />

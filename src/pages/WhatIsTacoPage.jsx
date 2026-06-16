@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Buttons from "../components/Buttons";
 import taco from "../assets/imgs/taco.webp";
@@ -32,8 +32,49 @@ const ButtonWrap = styled.div`
   display: flex;
   justify-content: center;
 `;
+const TacoImageWrap = styled.div`
+  opacity: 0;
+  transform: translateY(100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 1s ease;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  img {
+    display: block;
+    width: auto;
+  }
+`;
 
 export default function WhatIsTacoPage() {
+  const imageRef = useRef(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShow(true);
+        }
+      },
+      {
+        threshold: 0.3,
+      },
+    );
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+  console.log(show);
   return (
     <Section>
       <TacoInfo>
@@ -50,7 +91,9 @@ export default function WhatIsTacoPage() {
           <Buttons />
         </ButtonWrap>
       </TacoInfo>
-      <img src={taco} alt="taco" />
+      <TacoImageWrap ref={imageRef} className={show ? "show" : ""}>
+        <img src={taco} alt="taco" />
+      </TacoImageWrap>
     </Section>
   );
 }

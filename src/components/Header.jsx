@@ -67,11 +67,11 @@ const MypageContainer = styled.div`
 export default function Header() {
   return (
     <HeaderContainer>
-      <LogoContainer>
+      <LogoContainer to={"/"}>
         <TacobellLogo src={tacobell} alt="tacobell" />
       </LogoContainer>
       <NavContainer>
-        <NavLink>Story</NavLink>
+        <NavLink to={"/story"}>Story</NavLink>
         <NavLink>Menu</NavLink>
         <NavLink>News&Events</NavLink>
         <NavLink>Store</NavLink>
