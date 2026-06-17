@@ -11,17 +11,31 @@ const Section = styled.section`
   text-align: center;
   background-color: #8c73b7;
   border-radius: 30px;
+
+  @media (max-width: 375px) {
+    padding: 30px 0;
+    border-radius: 20px;
+  }
 `;
 
 const TacoBellMenu = styled.h3`
   font-family: "bangers";
   font-size: 56px;
   margin-bottom: 50px;
+
+  @media (max-width: 375px) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 `;
 
 const CategoryContainer = styled.div`
   display: flex;
   gap: 30px;
+
+  @media (max-width: 375px) {
+    display: none;
+  }
 `;
 
 const CategoryBtn = styled.button`
@@ -92,6 +106,11 @@ const MenuImgContainer = styled.div`
   box-shadow: 4px 4px 4px #0c0c0c25;
   border-radius: 30px;
   transition: 0.3s;
+
+  @media (max-width: 375px) {
+    width: 251px;
+    height: 193px;
+  }
 `;
 const MenuCard = styled.div`
   padding: 20px;
@@ -108,6 +127,10 @@ const MenuCard = styled.div`
   }
   &:hover .menu-img-container {
     background-color: #ad95d7;
+  }
+
+  @media (max-width: 375px) {
+    width: 291px;
   }
 `;
 
@@ -127,22 +150,33 @@ const MenuNameText = styled.h3`
   font-size: 28px;
   color: #9b00ff;
   font-family: "Jua";
+
+  @media (max-width: 375px) {
+    font-size: 16px;
+  }
 `;
 const MenuPriceText = styled.p`
   font-size: 28px;
   color: #9b00ff;
   font-family: "Jua";
+  @media (max-width: 375px) {
+    font-size: 16px;
+  }
 `;
 
 const MenuInfoText = styled.p`
   text-align: left;
   font-size: 16px;
+
+  @media (max-width: 375px) {
+    font-size: 12px;
+  }
 `;
 const MenuMoreView = styled(NavLink)`
   padding: 12px 50px;
   background-color: #ad95d7;
   width: 500px;
-  border-radius: 0 0 50px 50px;
+  border-radius: 0 0 30px 30px;
   font-size: 20px;
 
   &:hover {
@@ -156,6 +190,10 @@ const MenuMoreView = styled(NavLink)`
   }
 
   transition: all 0.3s ease;
+
+  @media (max-width: 375px) {
+    width: 300px;
+  }
 `;
 
 export default function MenuPage() {

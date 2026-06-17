@@ -10,27 +10,51 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   text-align: center;
+
+  @media (max-width: 375px) {
+    padding: 0 20px;
+  }
 `;
 const TacoInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+
+  @media (max-width: 375px) {
+    gap: 20px;
+  }
 `;
 const WhatIsTaco = styled.h3`
   font-family: "bangers";
   font-size: 56px;
+
+  @media (max-width: 375px) {
+    font-size: 24px;
+  }
 `;
 const Mexico = styled.p`
   font-size: 20px;
+
+  @media (max-width: 375px) {
+    font-size: 14px;
+  }
 `;
 const Info = styled.p`
   font-size: 28px;
   font-weight: 500;
+
+  @media (max-width: 375px) {
+    font-size: 12px;
+  }
 `;
 const ButtonWrap = styled.div`
   height: 50px;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 375px) {
+    height: 30px;
+  }
 `;
 const TacoImageWrap = styled.div`
   opacity: 0;

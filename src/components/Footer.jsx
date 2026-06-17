@@ -15,6 +15,19 @@ const FooterContainer = styled.footer`
   border-radius: 15px;
   color: #fafafa;
   font-size: 14px;
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+    padding: 20px 20px;
+    font-size: 12px;
+  }
+`;
+
+const TacoBellImg = styled.img`
+  @media (max-width: 375px) {
+    width: 136px;
+    margin-bottom: 10px;
+  }
 `;
 
 const FooterLeft = styled.div`
@@ -34,6 +47,10 @@ const SnsContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
+
+  @media (max-width: 375px) {
+    display: none;
+  }
 `;
 
 const FooterRight = styled.div`
@@ -41,12 +58,32 @@ const FooterRight = styled.div`
   display: flex;
   flex-direction: column;
   gap: 25px;
+
+  @media (max-width: 375px) {
+    text-align: center;
+  }
 `;
 
 const FooterLaw = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 20px;
+
+  @media (max-width: 375px) {
+    justify-content: center;
+  }
+`;
+
+const SnsContainerMobile = styled.div`
+  display: none;
+  padding: 40px 80px 0 80px;
+  @media (max-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 24px;
+    }
+  }
 `;
 
 export default function Footer() {
@@ -54,7 +91,7 @@ export default function Footer() {
     <FooterContainer>
       <FooterLeft>
         <FooterLeftWrap>
-          <img src={tacobell} alt="tacobell" />
+          <TacoBellImg src={tacobell} alt="tacobell" />
           <p>캘리스코 고객센터 : 1833 - 4550</p>
           <p>(평일 08:30 ~ 17:30, 공휴일 후무)</p>
         </FooterLeftWrap>
@@ -85,6 +122,17 @@ export default function Footer() {
           <p>개인정보처리방침</p>
         </FooterLaw>
       </FooterRight>
+      <SnsContainerMobile>
+        <NavLink>
+          <img src={instagram} alt="instagram" />
+        </NavLink>
+        <NavLink>
+          <img src={kakaotalk} alt="kakaotalk" />
+        </NavLink>
+        <NavLink>
+          <img src={facebook} alt="facebook" />
+        </NavLink>
+      </SnsContainerMobile>
     </FooterContainer>
   );
 }

@@ -7,6 +7,13 @@ const MarqueeWrapper = styled.div`
   overflow: hidden;
   white-space: nowrap;
   margin-bottom: 100px;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 70px;
+  }
+  @media (max-width: 375px) {
+    margin-bottom: 50px;
+  }
 `;
 
 const MarqueeTrack = styled.div`
@@ -26,6 +33,7 @@ const MarqueeTrack = styled.div`
 const Text = styled.p`
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 36px;
   margin: 0;
   padding-right: 100px;
@@ -37,6 +45,19 @@ const Text = styled.p`
     color: #ff8900;
   }
   font-family: "Shrikhand";
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+    strong {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 375px) {
+    font-size: 14px;
+    strong {
+      font-size: 14px;
+    }
+  }
 `;
 export default function DesignText() {
   return (

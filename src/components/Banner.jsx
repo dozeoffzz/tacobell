@@ -4,13 +4,13 @@ import bannerImg from "../assets/imgs/banner1.webp";
 
 const BannerContainer = styled.div`
   position: relative;
-  height: 900px;
+  /* height: 900px; */
 `;
 
 const BannerImg = styled.img`
   position: relative;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: block;
 `;
 
@@ -19,12 +19,17 @@ const Indicator = styled.div`
   position: absolute;
   left: 100px;
   right: 100px;
-  bottom: 45px;
+  bottom: 20px;
   display: flex;
   height: 5px;
   border-radius: 15px;
   background-color: #d9d9d9;
   z-index: 10;
+
+  @media (max-width: 375px) {
+    left: 20px;
+    right: 20px;
+  }
 `;
 
 const CurrentIndicator = styled.div`
@@ -34,6 +39,11 @@ const CurrentIndicator = styled.div`
   height: 10px;
   border-radius: 15px;
   background-color: #9b00ff;
+
+  @media (max-width: 375px) {
+    width: 100px;
+    height: 7px;
+  }
 `;
 
 export default function Banner() {

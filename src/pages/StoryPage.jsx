@@ -15,6 +15,8 @@ const Banner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 375px) {
+  }
 `;
 const AboutUs = styled.h2`
   position: absolute;
@@ -22,33 +24,63 @@ const AboutUs = styled.h2`
   color: #fafafa;
   font-size: 200px;
   text-shadow: 0 12px 4px #8c73b7;
+
+  @media (max-width: 375px) {
+    font-size: 56px;
+  }
 `;
 
 const AboutContainer = styled.div`
   padding: 0 100px;
   margin-bottom: 160px;
+
+  @media (max-width: 375px) {
+    padding: 0 20px;
+    margin-bottom: 80px;
+  }
 `;
 
 const AboutWrap = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+`;
+const AboutTacoBellImg = styled.img`
+  width: 100%;
+  max-width: 500px;
 `;
 
 const MainText = styled.h3`
   padding: 0 100px;
-  font-size: 58px;
+  font-size: 36px;
   margin-bottom: 40px;
+
+  @media (max-width: 375px) {
+    text-align: center;
+    font-size: 24px;
+  }
 `;
 
 const AboutTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 40px;
 `;
 const TextContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 60px;
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
 `;
 const TextWrap = styled.div`
   display: flex;
@@ -60,9 +92,17 @@ const TitleText = styled.p`
   font-size: 28px;
   font-weight: 600;
   color: #8c73b7;
+
+  @media (max-width: 375px) {
+    font-size: 20px;
+  }
 `;
 const InfoText = styled.p`
   font-size: 20px;
+
+  @media (max-width: 375px) {
+    font-size: 16px;
+  }
 `;
 
 const AboutHistroy = styled.div`
@@ -83,19 +123,48 @@ const HistoryContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 40px;
+
+  @media (max-width: 375px) {
+    padding: 0 20px;
+    flex-direction: column;
+  }
+`;
+const HistoryImgContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+const HistoryImg = styled.img`
+  width: 100%;
+  object-fit: cover;
 `;
 const HistoryLeftWrap = styled.div`
-  width: 848px;
+  width: 100%;
+  /* max-width: 600px; */
   overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media (max-width: 1728px) {
+    max-width: 600px;
+  }
 `;
 const HistoryMainText = styled.h3`
-  font-size: 56px;
+  font-size: 36px;
+
+  @media (max-width: 375px) {
+    text-align: center;
+    font-size: 24px;
+  }
 `;
 const HistorySubText = styled.p`
-  font-size: 36px;
+  font-size: 20px;
+
+  @media (max-width: 375px) {
+    text-align: center;
+    font-size: 14px;
+  }
 `;
 const HistoryInfoContainer = styled.div`
   display: flex;
@@ -104,6 +173,10 @@ const HistoryInfoContainer = styled.div`
   text-align: right;
   width: 100%;
   max-width: 830px;
+
+  @media (max-width: 1728px) {
+    /* width: 1000px; */
+  }
 `;
 const HistoryInfoWrap = styled.div`
   padding: 10px 0;
@@ -111,16 +184,28 @@ const HistoryInfoWrap = styled.div`
   cursor: pointer;
 `;
 const HistoryDate = styled.p`
-  font-size: 56px;
+  font-size: 28px;
   color: #8c73b7;
   font-weight: 600;
+
+  @media (max-width: 375px) {
+    font-size: 20px;
+  }
 `;
 const HistoryInfo = styled.p`
   font-size: 20px;
+
+  @media (max-width: 375px) {
+    font-size: 14px;
+  }
 `;
 const DesignTacoBell = styled.h1`
   padding: 0 100px;
   text-align: center;
+
+  @media (max-width: 375px) {
+    padding: 0 20px;
+  }
 `;
 
 export default function StoryPage() {
@@ -135,7 +220,7 @@ export default function StoryPage() {
       <MainText>타코벨의 이야기</MainText>
       <AboutContainer>
         <AboutWrap>
-          <img src={tacobellabout} />
+          <AboutTacoBellImg src={tacobellabout} />
           <AboutTextContainer>
             <TextContainer>
               <TextWrap>
@@ -218,9 +303,9 @@ export default function StoryPage() {
             하나의 작은 타코 스탠드에서 시작된 타코벨은,
             <br /> 수많은 혁신과 도전을 거쳐 세계적인 브랜드로 성장했습니다.
           </HistorySubText>
-          <div>
-            <img src={selectedHistory.img} alt={selectedHistory.date} />
-          </div>
+          <HistoryImgContainer>
+            <HistoryImg src={selectedHistory.img} alt={selectedHistory.date} />
+          </HistoryImgContainer>
         </HistoryLeftWrap>
         <HistoryInfoContainer>
           {[...Historys].reverse().map((item) => (

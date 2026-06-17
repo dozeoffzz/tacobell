@@ -25,6 +25,13 @@ const Button = styled.button`
   &:hover {
     transform: translateY(-5px);
   }
+
+  @media (max-width: 375px) {
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    bottom: 10px;
+  }
 `;
 
 export default function ScrollTop() {

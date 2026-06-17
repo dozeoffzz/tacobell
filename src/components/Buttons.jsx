@@ -7,7 +7,7 @@ const MoreInfo = styled(NavLink)`
   padding: 12px 32px;
   background-color: #fafafa;
   border-radius: 30px;
-  width: 150px;
+  /* width: 150px; */
   font-size: 20px;
   display: flex;
   justify-content: center;
@@ -26,6 +26,14 @@ const MoreInfo = styled(NavLink)`
   }
 
   transition: all 0.3s ease;
+
+  @media (max-width: 375px) {
+    font-size: 14px;
+    padding: 6px 28px;
+    img {
+      width: 14px;
+    }
+  }
 `;
 
 export default function Buttons() {

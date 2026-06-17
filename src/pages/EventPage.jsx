@@ -9,6 +9,10 @@ const Section = styled.section`
   padding: 50px 100px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 375px) {
+    padding: 50px 20px;
+  }
 `;
 
 const TacoBellEvent = styled.h3`
@@ -17,6 +21,11 @@ const TacoBellEvent = styled.h3`
   margin-bottom: 50px;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 375px) {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
 `;
 const ButtonWrap = styled.div`
   height: 50px;
@@ -30,37 +39,69 @@ const EventContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 54px;
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+  }
 `;
 const EventInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  @media (max-width: 375px) {
+    text-align: center;
+  }
 `;
 const EventInfoWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
   width: 465px;
+
+  @media (max-width: 375px) {
+    width: 375px;
+    padding: 0 20px;
+  }
 `;
 const Event = styled.p`
   font-size: 32px;
   font-weight: 500;
+
+  @media (max-width: 375px) {
+    font-size: 20px;
+  }
 `;
 const EventName = styled.p`
   font-size: 28px;
   font-weight: 500;
+
+  @media (max-width: 375px) {
+    font-size: 20px;
+  }
 `;
 const EventDate = styled.p`
   font-size: 20px;
+
+  @media (max-width: 375px) {
+    font-size: 16px;
+  }
 `;
 const EventInfo = styled.p`
   font-size: 20px;
+
+  @media (max-width: 375px) {
+    font-size: 16px;
+  }
 `;
 
 const EventImgContainer = styled.div`
   display: flex;
   width: 1200px;
   overflow: hidden;
+  @media (max-width: 375px) {
+    display: none;
+  }
 `;
 const EventImgTrack = styled.div`
   display: flex;
@@ -84,6 +125,10 @@ const EventImg = styled.div`
 const BtnWrap = styled.div`
   display: flex;
   gap: 60px;
+
+  @media (max-width: 375px) {
+    justify-content: center;
+  }
 `;
 
 const LeftRightWrap = styled.div`

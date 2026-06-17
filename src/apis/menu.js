@@ -20,7 +20,7 @@ export const AllMenu = [
   {
     id: 1,
     name: "소프트 브레드 타코",
-    price: "₩ 7,500",
+    price: "7,500",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "타코",
     img: softbreadtaco,
@@ -28,7 +28,7 @@ export const AllMenu = [
   {
     id: 2,
     name: "크런치 브레드 타코",
-    price: "₩ 7,500",
+    price: "7,500",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "타코",
     img: crunchbreadtaco,
@@ -36,7 +36,7 @@ export const AllMenu = [
   {
     id: 3,
     name: "수프림 타코",
-    price: "₩ 7,500",
+    price: "7,500",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "타코",
     img: supremetaco,
@@ -44,7 +44,7 @@ export const AllMenu = [
   {
     id: 4,
     name: "더블 치즈 데커 타코",
-    price: "₩ 7,500",
+    price: "7,500",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "타코",
     img: doublecheesetaco,
@@ -52,7 +52,7 @@ export const AllMenu = [
   {
     id: 5,
     name: "클래식 타코",
-    price: "₩ 7,500",
+    price: "7,500",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "타코",
     img: classictaco,
@@ -60,7 +60,7 @@ export const AllMenu = [
   {
     id: 6,
     name: "크런치랩",
-    price: "₩ 9,400",
+    price: "9,400",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "크런치랩,퀘사디아",
     img: crunchwrap,
@@ -68,7 +68,7 @@ export const AllMenu = [
   {
     id: 7,
     name: "트리플 치즈 퀘사디아",
-    price: "₩ 9,400",
+    price: "9,400",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "크런치랩,퀘사디아",
     img: triplecheesequesadilla,
@@ -76,7 +76,7 @@ export const AllMenu = [
   {
     id: 8,
     name: "퀘사디아",
-    price: "₩ 7,000",
+    price: "7,000",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "크런치랩,퀘사디아",
     img: quesadilla,
@@ -84,7 +84,7 @@ export const AllMenu = [
   {
     id: 9,
     name: "그릴 브리또",
-    price: "₩ 7,500",
+    price: "7,500",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "브리또",
     img: grilledburrito,
@@ -92,7 +92,7 @@ export const AllMenu = [
   {
     id: 10,
     name: "하바네로 브리또",
-    price: "₩ 7,500",
+    price: "7,500",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "브리또",
     img: habaneroburrito,
@@ -100,7 +100,7 @@ export const AllMenu = [
   {
     id: 11,
     name: "포테이토 브리또",
-    price: "₩ 7,500",
+    price: "7,500",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "브리또",
     img: potatoburrito,
@@ -108,7 +108,7 @@ export const AllMenu = [
   {
     id: 12,
     name: "브리또 보울",
-    price: "₩ 7,500",
+    price: "7,500",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "보울",
     img: burritobowl,
@@ -116,7 +116,7 @@ export const AllMenu = [
   {
     id: 13,
     name: "수프림 타코 보울",
-    price: "₩ 7,500",
+    price: "7,500",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "보울",
     img: supremetacobowl,
@@ -124,7 +124,7 @@ export const AllMenu = [
   {
     id: 14,
     name: "비프 포테이토 보울",
-    price: "₩ 7,500",
+    price: "7,500",
     info: "바삭한 또띠아 안에 양념 비프, 나초치즈, 토마토, 양상추, 사워크림 등을 넣고 한 번 더 그릴에 구워 만든 타코벨의 대표 메뉴",
     category: "보울",
     img: beefpotatobowl,
