@@ -11,6 +11,10 @@ const Section = styled.section`
   align-items: center;
   text-align: center;
 
+  @media (max-width: 1024px) {
+    padding: 0 50px;
+  }
+
   @media (max-width: 375px) {
     padding: 0 20px;
   }
@@ -28,12 +32,19 @@ const WhatIsTaco = styled.h3`
   font-family: "bangers";
   font-size: 56px;
 
+  @media (max-width: 1024px) {
+    font-size: 36px;
+  }
   @media (max-width: 375px) {
-    font-size: 24px;
+    font-size: 32px;
   }
 `;
 const Mexico = styled.p`
   font-size: 20px;
+
+  @media (max-width: 1024px) {
+    font-size: 18px;
+  }
 
   @media (max-width: 375px) {
     font-size: 14px;
@@ -43,8 +54,11 @@ const Info = styled.p`
   font-size: 28px;
   font-weight: 500;
 
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
   @media (max-width: 375px) {
-    font-size: 12px;
+    font-size: 16px;
   }
 `;
 const ButtonWrap = styled.div`
@@ -53,7 +67,7 @@ const ButtonWrap = styled.div`
   justify-content: center;
 
   @media (max-width: 375px) {
-    height: 30px;
+    height: 50px;
   }
 `;
 const TacoImageWrap = styled.div`
@@ -69,10 +83,16 @@ const TacoImageWrap = styled.div`
     opacity: 1;
     transform: translateY(0);
   }
+`;
 
-  img {
-    display: block;
-    width: auto;
+const TacoImg = styled.img`
+  display: block;
+  width: auto;
+
+  @media (max-width: 375px) {
+    width: 180vw;
+    max-width: 375px;
+    height: auto;
   }
 `;
 
@@ -98,7 +118,6 @@ export default function WhatIsTacoPage() {
 
     return () => observer.disconnect();
   }, []);
-  console.log(show);
   return (
     <Section>
       <TacoInfo>
@@ -116,7 +135,7 @@ export default function WhatIsTacoPage() {
         </ButtonWrap>
       </TacoInfo>
       <TacoImageWrap ref={imageRef} className={show ? "show" : ""}>
-        <img src={taco} alt="taco" />
+        <TacoImg src={taco} alt="taco" />
       </TacoImageWrap>
     </Section>
   );

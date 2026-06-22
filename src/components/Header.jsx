@@ -12,18 +12,20 @@ const HeaderContainer = styled.header`
   margin: 5px;
   border-radius: 15px;
   padding: 25px 100px;
+  height: 100px;
 
   @media (max-width: 1024px) {
     padding: 25px 50px;
   }
   @media (max-width: 375px) {
     padding: 25px 20px;
+    height: 80px;
   }
 `;
 
 const LogoContainer = styled(NavLink)`
-  width: 100%;
-  max-width: 500px;
+  /* width: 100%;
+  max-width: 500px; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -33,6 +35,9 @@ const TacobellLogo = styled.img`
   width: 225px;
   height: auto;
 
+  @media (max-width: 1024px) {
+    width: 130px;
+  }
   @media (max-width: 375px) {
     width: 130px;
     height: auto;
@@ -49,7 +54,8 @@ const NavContainer = styled.div`
 
   @media (max-width: 1024px) {
     gap: 60px;
-    font-size: 20px;
+    font-size: 16px;
+    gap: 40px;
   }
   @media (max-width: 375px) {
     display: none;
@@ -59,11 +65,15 @@ const NavContainer = styled.div`
 `;
 
 const MypageContainer = styled.div`
-  width: 100%;
-  max-width: 225px;
+  /* width: 100%;
+  max-width: 225px; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    width: 16px;
+  }
 
   @media (max-width: 375px) {
     img {

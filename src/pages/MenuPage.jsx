@@ -12,9 +12,13 @@ const Section = styled.section`
   background-color: #8c73b7;
   border-radius: 30px;
 
+  @media (max-width: 1024px) {
+    padding: 20px 0 30px 0;
+    border-radius: 30px;
+  }
   @media (max-width: 375px) {
-    padding: 30px 0;
-    border-radius: 20px;
+    padding: 20px 0 30px 0;
+    border-radius: 40px;
   }
 `;
 
@@ -23,9 +27,13 @@ const TacoBellMenu = styled.h3`
   font-size: 56px;
   margin-bottom: 50px;
 
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
   @media (max-width: 375px) {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 32px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -33,6 +41,9 @@ const CategoryContainer = styled.div`
   display: flex;
   gap: 30px;
 
+  @media (max-width: 1024px) {
+    gap: 10px;
+  }
   @media (max-width: 375px) {
     display: none;
   }
@@ -47,6 +58,7 @@ const CategoryBtn = styled.button`
   background-color: #ad95d7;
   min-width: 150px;
   font-size: 20px;
+  color: #0c0c0c;
 
   background-color: ${({ active }) => (active ? "#fafafa" : "#ad95d7")};
 
@@ -55,6 +67,15 @@ const CategoryBtn = styled.button`
   &:hover {
     background-color: #fafafa;
     color: #0c0c0c;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 8px 8px;
+    font-size: 16px;
+  }
+  @media (max-width: 375px) {
+    font-size: 24px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -107,6 +128,10 @@ const MenuImgContainer = styled.div`
   border-radius: 30px;
   transition: 0.3s;
 
+  @media (max-width: 1024px) {
+    width: 330px;
+    height: 280px;
+  }
   @media (max-width: 375px) {
     width: 251px;
     height: 193px;
@@ -129,6 +154,9 @@ const MenuCard = styled.div`
     background-color: #ad95d7;
   }
 
+  @media (max-width: 1024px) {
+    width: 370px;
+  }
   @media (max-width: 375px) {
     width: 291px;
   }
@@ -139,6 +167,10 @@ const MenuAllInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  @media (max-width: 375px) {
+    gap: 5px;
+  }
 `;
 
 const MenuNamePrice = styled.div`
@@ -151,6 +183,9 @@ const MenuNameText = styled.h3`
   color: #9b00ff;
   font-family: "Jua";
 
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
   @media (max-width: 375px) {
     font-size: 16px;
   }
@@ -159,6 +194,9 @@ const MenuPriceText = styled.p`
   font-size: 28px;
   color: #9b00ff;
   font-family: "Jua";
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
   @media (max-width: 375px) {
     font-size: 16px;
   }
@@ -168,31 +206,11 @@ const MenuInfoText = styled.p`
   text-align: left;
   font-size: 16px;
 
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
   @media (max-width: 375px) {
     font-size: 12px;
-  }
-`;
-const MenuMoreView = styled(NavLink)`
-  padding: 12px 50px;
-  background-color: #ad95d7;
-  width: 500px;
-  border-radius: 0 0 30px 30px;
-  font-size: 20px;
-
-  &:hover {
-    background-color: #fafafa;
-    color: #0c0c0c;
-  }
-  &:active {
-    background-color: #fafafa;
-    color: #0c0c0c;
-    box-shadow: 0 0 16px #9b00ff;
-  }
-
-  transition: all 0.3s ease;
-
-  @media (max-width: 375px) {
-    width: 300px;
   }
 `;
 
@@ -239,7 +257,6 @@ export default function MenuPage() {
             ))}
           </MenuTrack>
         </MenuViewport>
-        <MenuMoreView>메뉴 자세히 보기</MenuMoreView>
       </MenuContainer>
     </Section>
   );

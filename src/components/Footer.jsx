@@ -16,6 +16,10 @@ const FooterContainer = styled.footer`
   color: #fafafa;
   font-size: 14px;
 
+  @media (max-width: 1024px) {
+    padding: 20px 50px;
+    font-size: 12px;
+  }
   @media (max-width: 375px) {
     flex-direction: column;
     padding: 20px 20px;
@@ -24,6 +28,10 @@ const FooterContainer = styled.footer`
 `;
 
 const TacoBellImg = styled.img`
+  @media (max-width: 1024px) {
+    width: 150px;
+    margin-bottom: 10px;
+  }
   @media (max-width: 375px) {
     width: 136px;
     margin-bottom: 10px;
@@ -59,6 +67,9 @@ const FooterRight = styled.div`
   flex-direction: column;
   gap: 25px;
 
+  @media (max-width: 1024px) {
+    gap: 10px;
+  }
   @media (max-width: 375px) {
     text-align: center;
   }
@@ -78,6 +89,8 @@ const SnsContainerMobile = styled.div`
   display: none;
   padding: 40px 80px 0 80px;
   @media (max-width: 1024px) {
+  }
+  @media (max-width: 375px) {
     display: flex;
     justify-content: space-between;
     img {

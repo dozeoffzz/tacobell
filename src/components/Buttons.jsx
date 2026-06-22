@@ -27,6 +27,18 @@ const MoreInfo = styled(NavLink)`
 
   transition: all 0.3s ease;
 
+  @media (max-width: 1728px) {
+    font-size: 20px;
+    img {
+      width: 16px;
+    }
+  }
+  @media (max-width: 1024px) {
+    font-size: 14px;
+    img {
+      width: 16px;
+    }
+  }
   @media (max-width: 375px) {
     font-size: 14px;
     padding: 6px 28px;

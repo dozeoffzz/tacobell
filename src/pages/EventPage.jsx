@@ -9,7 +9,11 @@ const Section = styled.section`
   padding: 50px 100px;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 
+  @media (max-width: 1024px) {
+    padding: 50px;
+  }
   @media (max-width: 375px) {
     padding: 50px 20px;
   }
@@ -22,8 +26,11 @@ const TacoBellEvent = styled.h3`
   display: flex;
   justify-content: center;
 
+  @media (max-width: 1024px) {
+    font-size: 36px;
+  }
   @media (max-width: 375px) {
-    font-size: 24px;
+    font-size: 32px;
     margin-bottom: 10px;
   }
 `;
@@ -40,8 +47,13 @@ const EventContainer = styled.div`
   align-items: center;
   gap: 54px;
 
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 30px;
+  }
   @media (max-width: 375px) {
     flex-direction: column;
+    gap: 30px;
   }
 `;
 const EventInfoContainer = styled.div`
@@ -49,18 +61,26 @@ const EventInfoContainer = styled.div`
   flex-direction: column;
   gap: 40px;
 
+  @media (max-width: 1024px) {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
   @media (max-width: 375px) {
     text-align: center;
+    gap: 20px;
   }
 `;
 const EventInfoWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  width: 465px;
 
+  @media (max-width: 1024px) {
+    padding: 0 50px;
+  }
   @media (max-width: 375px) {
-    width: 375px;
     padding: 0 20px;
   }
 `;
@@ -69,13 +89,16 @@ const Event = styled.p`
   font-weight: 500;
 
   @media (max-width: 375px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 `;
 const EventName = styled.p`
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 700;
 
+  @media (max-width: 1024px) {
+    font-size: 24px;
+  }
   @media (max-width: 375px) {
     font-size: 20px;
   }
@@ -83,6 +106,9 @@ const EventName = styled.p`
 const EventDate = styled.p`
   font-size: 20px;
 
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
   @media (max-width: 375px) {
     font-size: 16px;
   }
@@ -90,6 +116,9 @@ const EventDate = styled.p`
 const EventInfo = styled.p`
   font-size: 20px;
 
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
   @media (max-width: 375px) {
     font-size: 16px;
   }
@@ -99,8 +128,14 @@ const EventImgContainer = styled.div`
   display: flex;
   width: 1200px;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    width: 724px;
+  }
   @media (max-width: 375px) {
-    display: none;
+    display: flex;
+    width: 335px;
   }
 `;
 const EventImgTrack = styled.div`
@@ -108,6 +143,15 @@ const EventImgTrack = styled.div`
   gap: 20px;
   transition: transform 0.5s ease;
   transform: ${({ currentIndex }) => `translateX(-${currentIndex * 500}px)`};
+
+  @media (max-width: 1024px) {
+    gap: 0;
+    transform: ${({ currentIndex }) => `translateX(-${currentIndex * 462}px)`};
+  }
+  @media (max-width: 375px) {
+    gap: 0;
+    transform: ${({ currentIndex }) => `translateX(-${currentIndex * 335}px)`};
+  }
 `;
 const EventImg = styled.div`
   flex-shrink: 0;
@@ -119,6 +163,19 @@ const EventImg = styled.div`
   img {
     width: 480px;
     display: block;
+  }
+
+  @media (max-width: 1024px) {
+    width: 462px;
+    img {
+      width: 100%;
+    }
+  }
+  @media (max-width: 375px) {
+    width: 335px;
+    img {
+      width: 100%;
+    }
   }
 `;
 

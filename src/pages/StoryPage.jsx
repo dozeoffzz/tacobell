@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import DesignText from "../components/DesignText";
 import styled from "@emotion/styled";
-import aboutbanner from "../assets/imgs/aboutbanner.webp";
+import aboutbanner from "../assets/banners/aboutbanner.webp";
+import aboutbannerMobile from "../assets/banners/aboutbannerMobile.webp";
 import tacobellabout from "../assets/imgs/tacobellabout.webp";
 import { Historys } from "../apis/history";
 import TACOBELL from "../assets/imgs/TACOBELL.png";
@@ -15,7 +16,30 @@ const Banner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1024px) {
+  }
+`;
+
+const PcBanner = styled.img`
+  width: 100%;
+  display: block;
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 600px;
+  }
+
   @media (max-width: 375px) {
+    display: none;
+  }
+`;
+
+const MobileBanner = styled.img`
+  width: 100%;
+  height: 450px;
+  display: none;
+
+  @media (max-width: 375px) {
+    display: block;
   }
 `;
 const AboutUs = styled.h2`
@@ -25,6 +49,9 @@ const AboutUs = styled.h2`
   font-size: 200px;
   text-shadow: 0 12px 4px #8c73b7;
 
+  @media (max-width: 1024px) {
+    font-size: 100px;
+  }
   @media (max-width: 375px) {
     font-size: 56px;
   }
@@ -34,6 +61,11 @@ const AboutContainer = styled.div`
   padding: 0 100px;
   margin-bottom: 160px;
 
+  @media (max-width: 1024px) {
+    padding: 0 50px;
+    font-size: 36px;
+    margin-bottom: 80px;
+  }
   @media (max-width: 375px) {
     padding: 0 20px;
     margin-bottom: 80px;
@@ -44,14 +76,24 @@ const AboutWrap = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 40px;
+  }
   @media (max-width: 375px) {
     flex-direction: column;
     gap: 40px;
   }
 `;
 const AboutTacoBellImg = styled.img`
-  width: 100%;
-  max-width: 500px;
+  @media (max-width: 1728px) {
+    width: 100%;
+    max-width: 500px;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+    max-width: none;
+  }
 `;
 
 const MainText = styled.h3`
@@ -59,6 +101,10 @@ const MainText = styled.h3`
   font-size: 36px;
   margin-bottom: 40px;
 
+  @media (max-width: 1024px) {
+    text-align: center;
+    padding: 0 50px;
+  }
   @media (max-width: 375px) {
     text-align: center;
     font-size: 24px;
@@ -76,6 +122,10 @@ const TextContainer = styled.div`
   justify-content: space-between;
   gap: 60px;
 
+  @media (max-width: 1024px) {
+    /* flex-direction: column; */
+    gap: 20px;
+  }
   @media (max-width: 375px) {
     flex-direction: column;
     gap: 20px;
@@ -86,6 +136,10 @@ const TextWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  @media (max-width: 1024px) {
+    gap: 20px;
+  }
 `;
 
 const TitleText = styled.p`
@@ -93,6 +147,9 @@ const TitleText = styled.p`
   font-weight: 600;
   color: #8c73b7;
 
+  @media (max-width: 1024px) {
+    font-size: 24px;
+  }
   @media (max-width: 375px) {
     font-size: 20px;
   }
@@ -100,6 +157,9 @@ const TitleText = styled.p`
 const InfoText = styled.p`
   font-size: 20px;
 
+  @media (max-width: 1024px) {
+    font-size: 18px;
+  }
   @media (max-width: 375px) {
     font-size: 16px;
   }
@@ -125,6 +185,9 @@ const HistoryContainer = styled.div`
   align-items: flex-end;
   gap: 40px;
 
+  @media (max-width: 1024px) {
+    padding: 0 50px;
+  }
   @media (max-width: 375px) {
     padding: 0 20px;
     flex-direction: column;
@@ -140,7 +203,7 @@ const HistoryImg = styled.img`
 `;
 const HistoryLeftWrap = styled.div`
   width: 100%;
-  /* max-width: 600px; */
+  max-width: 700px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -149,10 +212,20 @@ const HistoryLeftWrap = styled.div`
   @media (max-width: 1728px) {
     max-width: 600px;
   }
+  @media (max-width: 1024px) {
+    width: 1000px;
+  }
+  @media (max-width: 375px) {
+    width: 100%;
+  }
 `;
 const HistoryMainText = styled.h3`
   font-size: 36px;
 
+  @media (max-width: 1024px) {
+    font-size: 32px;
+    /* white-space: nowrap; */
+  }
   @media (max-width: 375px) {
     text-align: center;
     font-size: 24px;
@@ -161,6 +234,9 @@ const HistoryMainText = styled.h3`
 const HistorySubText = styled.p`
   font-size: 20px;
 
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
   @media (max-width: 375px) {
     text-align: center;
     font-size: 14px;
@@ -170,12 +246,12 @@ const HistoryInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 700px;
   text-align: right;
   width: 100%;
-  max-width: 830px;
 
   @media (max-width: 1728px) {
-    /* width: 1000px; */
+    height: 600px;
   }
 `;
 const HistoryInfoWrap = styled.div`
@@ -188,13 +264,19 @@ const HistoryDate = styled.p`
   color: #8c73b7;
   font-weight: 600;
 
+  @media (max-width: 1024px) {
+    font-size: 24px;
+  }
   @media (max-width: 375px) {
     font-size: 20px;
   }
 `;
-const HistoryInfo = styled.p`
+const HistoryInfo = styled.div`
   font-size: 20px;
 
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
   @media (max-width: 375px) {
     font-size: 14px;
   }
@@ -203,6 +285,9 @@ const DesignTacoBell = styled.h1`
   padding: 0 100px;
   text-align: center;
 
+  @media (max-width: 1024px) {
+    padding: 0 50px;
+  }
   @media (max-width: 375px) {
     padding: 0 20px;
   }
@@ -213,7 +298,8 @@ export default function StoryPage() {
   return (
     <Section>
       <Banner>
-        <img src={aboutbanner} />
+        <PcBanner src={aboutbanner} />
+        <MobileBanner src={aboutbannerMobile} />
         <AboutUs>ABOUT US</AboutUs>
       </Banner>
       <DesignText />
@@ -308,7 +394,7 @@ export default function StoryPage() {
           </HistoryImgContainer>
         </HistoryLeftWrap>
         <HistoryInfoContainer>
-          {[...Historys].reverse().map((item) => (
+          {Historys.map((item) => (
             <HistoryInfoWrap key={item.id} onClick={() => setSelectedHistory(item)}>
               <HistoryDate>{item.date}</HistoryDate>
               <HistoryInfo> {selectedHistory.id === item.id && <HistoryInfo>{item.info}</HistoryInfo>}</HistoryInfo>
