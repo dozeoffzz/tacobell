@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DesignText from "../components/DesignText";
 import styled from "@emotion/styled";
 import aboutbanner from "../assets/banners/aboutbanner.webp";
-import aboutbannerMobile from "../assets/banners/aboutbannerMobile.webp";
+import aboutbannerMobile from "../assets/banners/aboutbannermobile.webp";
 import tacobellabout from "../assets/imgs/tacobellabout.webp";
 import { Historys } from "../apis/history";
 import TACOBELL from "../assets/imgs/TACOBELL.png";
