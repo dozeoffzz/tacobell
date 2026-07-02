@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { AllStores } from "../apis/stores";
 import tacobellStore from "../assets/icons/tacobellstore.svg";
 import tacobellMap from "../assets/icons/tacobellmap.svg";
@@ -33,6 +33,25 @@ const MainText = styled.h3`
   @media (max-width: 375px) {
     font-size: 32px;
   }
+`;
+
+const RegionContainer = styled.div`
+  display: flex;
+  gap: 15px;
+  margin-bottom: 50px;
+`;
+
+const RegionButton = styled.button`
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+
+  background-color: ${({ active }) => (active ? "#8c73b7" : "#d9d9d9")};
+
+  color: ${({ active }) => (active ? "#fafafa" : "#0c0c0c")};
+
+  transition: 0.3s;
 `;
 
 const StoreContainer = styled.div`
@@ -163,11 +182,21 @@ const CallContainer = styled.a`
 `;
 
 export default function StorePage() {
+  const [region, setRegion] = useState("인천");
+  const regions = [...new Set(AllStores.map((item) => item.region))];
+  const filteredStores = AllStores.filter((item) => item.region === region);
   return (
     <Section>
       <MainText>TACO BELL's STORE</MainText>
+      <RegionContainer>
+        {regions.map((item) => (
+          <RegionButton key={item} active={region === item} onClick={() => setRegion(item)}>
+            {item}
+          </RegionButton>
+        ))}
+      </RegionContainer>
       <StoreContainer>
-        {AllStores.map((item) => (
+        {filteredStores.map((item) => (
           <StoreCardWrap key={item.id}>
             {/* <StoreRegion>{item.region}</StoreRegion> */}
             <StoreImgContainer>
